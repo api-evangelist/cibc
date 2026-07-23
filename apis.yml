@@ -41,6 +41,10 @@ modified: '2026-07-23'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/cibc-domain-security.yml
+- type: LLMsTxt
+  url: llms/cibc-llms.txt
 - type: Website
   url: https://www.cibc.com
 - type: About

@@ -1,0 +1,24 @@
+# CIBC (Canadian Imperial Bank of Commerce)
+
+> Canadian Imperial Bank of Commerce (CIBC) is a Schedule I domestic chartered bank and one of Canada's Big Six, headquartered in Toronto. CIBC runs no first-party public developer portal (developer.cibc.com does not resolve) and publishes no downloadable OpenAPI/Swagger specifications. Consumer-permissioned data access today is aggregator-mediated (MX, Plaid), and corporate connectivity is offered through CIBC SWIFT Corporate Access (SCA) file exchange rather than a public REST API — pending Canada's coming Consumer-Driven Banking regime overseen by the FCAC.
+
+## About
+
+- [CIBC website](https://www.cibc.com): Corporate and retail banking home.
+- [About CIBC](https://www.cibc.com/en/about-cibc.html): Company profile, history, and structure.
+- [CIBC on LinkedIn](https://www.linkedin.com/company/cibc): Corporate LinkedIn presence.
+
+## Access & Connectivity
+
+- [Cash Management Services](https://www.cibc.com/en/commercial/business-solutions/managing-cash-flow/cash-management-services.html): Commercial cash-management offering, including SWIFT Corporate Access (SCA) file exchange for corporate connectivity.
+- [CIBC via Plaid](https://plaid.com/institutions/cibc/): Aggregator-mediated, consumer-permissioned data access (Assets, Auth, Balance).
+
+## Legal & Security
+
+- [Privacy Policy](https://www.cibc.com/en/privacy-security/privacy-policy.html): CIBC privacy policy.
+- [Legal / Terms](https://www.cibc.com/en/legal.html): Legal terms and conditions.
+
+## Notes
+
+- No public OpenAPI, GraphQL SDL, or MCP server is published by CIBC as of this writing.
+- Canada's Consumer-Driven Banking framework (legislated Budget 2024 / 2024 Fall Economic Statement, overseen by the Financial Consumer Agency of Canada) is not yet operational; open-banking API access remains voluntary and aggregator-mediated.
