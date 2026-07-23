@@ -1,0 +1,102 @@
+aid: cibc
+name: CIBC
+review:
+  question: Does CIBC (the Canadian parent) expose a first-party public developer portal or downloadable API specifications?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Canadian Imperial Bank of Commerce (CIBC), a Schedule I domestic chartered
+    bank and one of Canada's Big Six, exposes NO first-party public developer
+    portal and publishes NO downloadable OpenAPI or Swagger specifications as of
+    the review date. The expected developer subdomain developer.cibc.com does
+    not resolve (connection/DNS failure, HTTP 000), and the public marketing
+    site www.cibc.com (HTTP 200) documents products, not APIs. This is the
+    honest, common posture for a Canadian bank: Canada has no operational
+    open-banking mandate. The federal Consumer-Driven Banking framework
+    (legislated in Budget 2024 and the 2024 Fall Economic Statement, overseen by
+    the Financial Consumer Agency of Canada / FCAC) is not yet live, so access
+    is voluntary and fragmented.
+
+    Consumer-permissioned data access is AGGREGATOR-MEDIATED, not first-party.
+    CIBC signed a tokenized data-access agreement with U.S. aggregator MX
+    (announced August 2022 - reported as MX's first such agreement in Canada)
+    enabling its ~11 million clients to share financial data with third-party
+    applications without exposing banking credentials. CIBC accounts are also
+    reachable through Plaid (Assets, Auth, Balance products). These are
+    aggregator arrangements, not a CIBC-operated public API.
+
+    Corporate/treasury connectivity is delivered through CIBC SWIFT Corporate
+    Access (SCA) - a SWIFT-format file exchange integrated with a client's
+    Treasury Management System - rather than a documented public REST API. OAuth
+    is referenced as CIBC's internal authorization standard, but no self-service
+    public OAuth developer flow is documented.
+  charter: Schedule I domestic chartered bank (Canada); one of the Big Six
+  entityScope: |
+    This review covers the CANADIAN PARENT, Canadian Imperial Bank of Commerce
+    (cibc.com / Toronto). The U.S. subsidiary, CIBC Bank USA (us.cibc.com), is a
+    separate legal entity reviewed in the distinct cibc-us repository and is not
+    attributed here.
+  developerPortal:
+    url: https://developer.cibc.com
+    status: 000
+    note: Does not resolve; no first-party developer portal is published.
+  firstPartyPublicApi: false
+  downloadableSpecs: false
+  specProvenance: none
+  fdxParticipant: false
+  section1033Posture: not-applicable
+  section1033Note: |
+    Section 1033 is a U.S. (CFPB) rule and applies to CIBC's U.S. arm, not the
+    Canadian parent. The relevant Canadian regime is Consumer-Driven Banking,
+    which is legislated but not yet operational; CIBC has published no first-party
+    data-access API under it.
+  aggregatorOnly: true
+  aggregators:
+    - name: MX
+      relationship: Tokenized data-access agreement (announced August 2022; reported as MX's first in Canada)
+      firstParty: false
+    - name: Plaid
+      relationship: Third-party aggregator coverage (Assets, Auth, Balance)
+      firstParty: false
+  authModel:
+    documentedPublicFlow: false
+    note: OAuth cited as CIBC's internal authorization standard; no public OAuth developer flow documented.
+  canadianRails:
+    interac: participant (Interac e-Transfer)
+    paymentsCanada: participant (settlement systems; no public API documented)
+  consumerDrivenBanking:
+    frameworkLive: false
+    note: Legislated (Budget 2024 + Fall Economic Statement 2024, FCAC oversight) but not yet operational.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No public first-party REST API is documented.
+    - protocol: SWIFT
+      scheme: file
+      documented: true
+      note: CIBC SWIFT Corporate Access (SCA) file exchange for corporate treasury customers; not a public web API.
+sources:
+  - url: https://developer.cibc.com
+    type: DeveloperPortal
+    note: HTTP 000 - subdomain does not resolve; no first-party developer portal.
+  - url: https://www.cibc.com
+    type: Website
+    note: HTTP 200 - corporate/marketing site; documents banking products, not APIs.
+  - url: https://www.cibc.com/en/commercial/business-solutions/managing-cash-flow/cash-management-services.html
+    type: Documentation
+    note: Cash management services incl. CIBC SWIFT Corporate Access; file-based, no public API.
+  - url: https://betakit.com/cibc-latest-big-six-bank-to-partner-with-a-fintech-on-private-open-banking-api/
+    type: News
+    note: CIBC-MX private open-banking data-access agreement (August 2022); aggregator, not first-party portal.
+  - url: https://plaid.com/institutions/cibc/
+    type: DataAggregator
+    note: CIBC accounts reachable via Plaid (Assets, Auth, Balance).
+actions:
+  openapiHarvested: false
+  reason: |
+    No downloadable OpenAPI/Swagger specification is published by CIBC, and no
+    first-party public API endpoint is documented, so nothing could be harvested
+    verbatim. Identity-only, aggregator-mediated posture recorded honestly.
