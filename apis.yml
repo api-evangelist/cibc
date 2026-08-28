@@ -24,6 +24,17 @@ description: >-
   is offered through CIBC SWIFT Corporate Access (SCA) file exchange rather than
   a public REST API, so CIBC's honest public API surface today is
   aggregator-mediated only, pending the coming Consumer-Driven Banking regime.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Financial-Services
