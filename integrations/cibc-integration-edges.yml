@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/cibc/integrations
+- https://n8n.io/integrations/cibc/
+- https://composio.dev/toolkits/cibc
+- https://monid.ai/tools/cibc
+checked:
+- https://composio.dev/toolkits/cibc
+- https://monid.ai/tools/cibc
+- https://n8n.io/integrations/cibc/
+- https://zapier.com/apps/cibc/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
